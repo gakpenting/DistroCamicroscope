@@ -4,21 +4,23 @@
 
 caMicroscope 3.X distribution
 
-
-run with `docker-compose -f caMicroscope.yml up`
+dont forget to clone https://github.com/lokimonoton/caMicroscope
+run with `docker-compose -f panda.yml up`
 
 this will build all services and run in the foreground.
-Use `docker-compose -f caMicroscope.yml build` to rebuild the services.
+Use `docker-compose -f panda.yml build` to rebuild the services.
 
 Once everything is up, go to <the host this is running on>:4010/ to see the landing page.
 
 ## SSL
+
 To enable ssl, mount the private key and certificate files to the security service in /root/src/ssl/privatekey.pem and /root/src/ssl/certificate.pem respectively. HTTPS mode will only be enabled if both of these files are present.
 
 ## Component Services
+
 mongo - vanilla mongo container
 
-idxMongo - ephemeral container to index mongo (that is, this container is *expected* to exit once it's done its job)
+idxMongo - ephemeral container to index mongo (that is, this container is _expected_ to exit once it's done its job)
 
 bindaas - api service for mongo (see https://github.com/sharmalab/bindaas)
 
@@ -31,6 +33,7 @@ loader - extracts metadata needed for image loading (see https://github.com/cami
 security - security proxy (see https://github.com/camicroscope/Security)
 
 ## Configuration
+
 Logging - Container Logging is, for HIPAA reasons, disabled. Feel free to use a different logging engine if desired, especially for development.
 
 Security and Routes - This is handled by the security container. By default routes go the viewer, unless a specific pattern in routes.json is matched. If security is enabled, supply the SECRET (pub key or secret of JWT) for verification, otherwise set DISABLE_SEC to true.
@@ -45,12 +48,13 @@ To use PathDB, use quip-pathdb.yml instead of caMicroscope.yml. This deployment 
 
 Running QuIP with PathDB:
 
-0) place yourself in quip\_distro folder.<br>
-1) copy config/httpd.conf.template to config/httpd.conf<br>
-2) copy config/pathdb\_routes.json to config/routes.json (this will overwrite an existing routes.json file)<br>
-3) configure httpd.conf with your certificates to enable https.<br>
-4) build with, "docker-compose -f quip-pathdb.yml build"<br>
-5) run with, "docker-compose -f quip-pathdb.yml up -d"
+0. place yourself in quip_distro folder.<br>
+1. copy config/httpd.conf.template to config/httpd.conf<br>
+1. copy config/pathdb_routes.json to config/routes.json (this will overwrite an existing routes.json file)<br>
+1. configure httpd.conf with your certificates to enable https.<br>
+1. build with, "docker-compose -f quip-pathdb.yml build"<br>
+1. run with, "docker-compose -f quip-pathdb.yml up -d"
 
 ## Support
+
 Feel free to add any support inquiry as a github issue to this repository. Other feedback can be given via [this form](https://docs.google.com/forms/d/e/1FAIpQLScL91LxrpAZjU88GBZP9gmcdgdf8__uNUwhws2lzU6Lr4qNwA/viewform).
