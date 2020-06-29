@@ -3,7 +3,9 @@
   "version": "3.0.0",
   "description": "",
   "scripts": {
-    "test": "mocha *.js --exit"
+    "test": "mocha *.js --exit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -11,8 +13,10 @@
     "chai": "^4.1.2",
     "express": "^4.16.2",
     "jsdom": "^11.11.0",
-    "mocha": "^5.1.1",
+    "mocha": "^6.2.3",
     "node-fetch": "^2.2.0",
-    "whatwg-fetch": "^3.0.0"
-  }
+    "whatwg-fetch": "^3.0.0",
+    "snyk": "^1.349.0"
+  },
+  "snyk": true
 }
