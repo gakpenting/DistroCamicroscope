@@ -6,3 +6,5 @@ patch:
   SNYK-JS-LODASH-567746:
     - jsdom > request-promise-native > request-promise-core > lodash:
         patched: '2020-06-29T00:10:59.524Z'
+    - mocha > yargs-unparser > lodash:
+        patched: '2020-06-29T00:29:07.481Z'
