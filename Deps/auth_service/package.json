@@ -11,7 +11,7 @@
   "author": "birm",
   "license": "UNLICENSED",
   "dependencies": {
-    "cookie-parser": "^1.4.5",
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.1",
     "express-promise": "^0.4.0",
     "jsonwebtoken": "^8.5.1",
